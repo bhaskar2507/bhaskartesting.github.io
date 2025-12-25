@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================
+       STUDENT PORTFOLIO TEMPLATE
+       Replace all PLACEHOLDER values
+       ========================================= -->
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Basic SEO -->
+  <title>[STUDENT NAME] – Academic Portfolio</title>
+  <meta name="description" content="Academic portfolio for [STUDENT NAME], a [GRADE LEVEL] student showcasing coursework, projects, events, and leadership." />
+
+  <!-- Open Graph / Social (optional, but good practice) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="[STUDENT NAME] – Academic Portfolio" />
+  <meta property="og:description" content="Academic portfolio for [STUDENT NAME], a [GRADE LEVEL] student showcasing coursework, projects, events, and leadership." />
+  <meta property="og:image" content="[URL TO SOCIAL PREVIEW IMAGE]" />
+  <meta property="og:url" content="https://[GITHUB_USERNAME].github.io/[REPO_NAME]/" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="[STUDENT NAME] – Academic Portfolio" />
+  <meta name="twitter:description" content="Academic portfolio for [STUDENT NAME], a [GRADE LEVEL] student showcasing coursework, projects, events, and leadership." />
+  <meta name="twitter:image" content="[URL TO SOCIAL PREVIEW IMAGE]" />
+  <meta name="twitter:url" content="https://[GITHUB_USERNAME].github.io/[REPO_NAME]/" />
+
+  <!-- Author / License -->
+  <meta name="author" content="[INSTRUCTOR / MENTOR NAME], [ORGANIZATION / PROGRAM]" />
+  <meta name="license" content="MIT License" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://[GITHUB_USERNAME].github.io/[REPO_NAME]/" />
+
+  <!-- Fonts (example brand kit – optional, can change) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&family=Poppins:wght@700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Basic Styling (inline for simplicity; you can move to styles.css) -->
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.15);
+      --text-main: #e5e7eb;
+      --text-muted: #9ca3af;
+      --border-subtle: rgba(148, 163, 184, 0.3);
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 52%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .brand-title {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 1.75rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .brand-subtitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-muted);
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 320px;
+      text-align: right;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 800px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .tagline {
+        text-align: left;
+        max-width: 100%;
+      }
+    }
+
+    .card {
+      background: linear-gradient(145deg, var(--card), #020617 40%, #020617 100%);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 24px 24px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card + .card {
+      margin-top: 16px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+    }
+
+    .card-meta {
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .card-body {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .name {
+      font-family: "Poppins", system-ui, sans-serif;
+      font-size: 1.9rem;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .meta-label {
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    .meta-value {
+      font-weight: 500;
+      color: var(--text-main);
+    }
+
+    .section-list {
+      list-style: none;
+      margin-top: 8px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .section-item-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .section-item-meta {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 6px;
+    }
+
+    .badge {
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    footer {
+      margin-top: 32px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <!-- STUDENT: Replace with your name / brand -->
+        <div class="brand-title">[STUDENT NAME]</div>
+        <div class="brand-subtitle">Academic Portfolio</div>
+      </div>
+      <div class="tagline">
+        <!-- STUDENT: One-sentence summary -->
+        [Short 1–2 sentence description of who you are, your grade, and your main academic interests.]
+      </div>
+    </header>
+
+    <main>
+      <!-- Left column: About, Projects, Coursework -->
+      <section aria-label="Main content">
+        <!-- ABOUT -->
+        <article class="card" id="about">
+          <div class="card-header">
+            <div class="card-title">About</div>
+            <div class="card-meta">Profile</div>
+          </div>
+          <div class="card-body">
+            <div class="pill">Student Profile</div>
+            <h1 class="name">[STUDENT NAME]</h1>
+            <p class="subtitle">
+              [GRADE LEVEL] student at [SCHOOL NAME], with interests in [KEY SUBJECTS / FOCUS AREAS].
+            </p>
+            <p>
+              [A short paragraph (3–5 sentences) describing the student’s academic interests, learning philosophy,
+              and goals. Mention any programs, mentors, or institutions (e.g., coached by the Active Learning Institute
+              (ActiveSTEM.org)).]
+            </p>
+
+            <div class="meta-list" style="margin-top: 16px;">
+              <div>
+                <div class="meta-label">Grade</div>
+                <div class="meta-value">[GRADE LEVEL]</div>
+              </div>
+              <div>
+                <div class="meta-label">School</div>
+                <div class="meta-value">[SCHOOL NAME]</div>
+              </div>
+              <div>
+                <div class="meta-label">Location</div>
+                <div class="meta-value">[CITY, STATE / COUNTRY]</div>
+              </div>
+              <div>
+                <div class="meta-label">Focus</div>
+                <div class="meta-value">[e.g., Mathematics, Computer Science, STEM Leadership]</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECTS -->
+        <article class="card" id="projects">
+          <div class="card-header">
+            <div class="card-title">Projects</div>
+            <div class="card-meta">Showcase</div>
+          </div>
+          <div class="card-body">
+            <ul class="section-list">
+              <!-- PROJECT 1 -->
+              <li>
+                <div class="section-item-title">[Project Title #1]</div>
+                <div class="section-item-meta">
+                  [Subject / Area] · [Year or Term] · [Individual / Team]
+                </div>
+                <p>
+                  [2–3 sentence description of what the project is about, the problem it addressed, and what the student
+                  learned or achieved.]
+                </p>
+                <div class="badge-row">
+                  <span class="badge">[Skill/Tool]</span>
+                  <span class="badge">[Language/Tech]</span>
+                  <span class="badge">[Topic/Domain]</span>
+                </div>
+              </li>
+
+              <!-- PROJECT 2 -->
+              <li>
+                <div class="section-item-title">[Project Title #2]</div>
+                <div class="section-item-meta">
+                  [Subject / Area] · [Year or Term] · [Individual / Team]
+                </div>
+                <p>
+                  [Brief description of a second significant project, research, or competition entry.]
+                </p>
+                <div class="badge-row">
+                  <span class="badge">[Skill/Tool]</span>
+                  <span class="badge">[Language/Tech]</span>
+                </div>
+              </li>
+
+              <!-- PROJECT 3 -->
+              <li>
+                <div class="section-item-title">[Project Title #3]</div>
+                <div class="section-item-meta">
+                  [Subject / Area] · [Year or Term] · [Individual / Team]
+                </div>
+                <p>
+                  [Optional third project. Focus on impact, creativity, or difficulty.]
+                </p>
+                <div class="badge-row">
+                  <span class="badge">[Skill/Tool]</span>
+                  <span class="badge">[Topic/Domain]</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- COURSEWORK -->
+        <article class="card" id="coursework">
+          <div class="card-header">
+            <div class="card-title">Coursework</div>
+            <div class="card-meta">Academics</div>
+          </div>
+          <div class="card-body">
+            <p>
+              [Brief overview of the student’s academic track—for example, honors courses, AP classes, or specialized
+              programs.]
+            </p>
+            <ul class="section-list">
+              <li>
+                <div class="section-item-title">[Course Name #1]</div>
+                <div class="section-item-meta">
+                  [Level, e.g., Honors / AP / IB] · [Year or term]
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">[Course Name #2]</div>
+                <div class="section-item-meta">
+                  [Level] · [Year or term]
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">[Course Name #3]</div>
+                <div class="section-item-meta">
+                  [Level] · [Year or term]
+                </div>
+              </li>
+              <!-- Add more as needed -->
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- Right column: Achievements, Activities, Contact -->
+      <aside aria-label="Sidebar content">
+        <!-- ACHIEVEMENTS -->
+        <article class="card" id="achievements">
+          <div class="card-header">
+            <div class="card-title">Achievements</div>
+            <div class="card-meta">Recognition</div>
+          </div>
+          <div class="card-body">
+            <ul class="section-list">
+              <li>
+                <div class="section-item-title">[Award / Competition #1]</div>
+                <div class="section-item-meta">
+                  [Organization] · [Level, e.g., School / Regional / National] · [Year]
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">[Award / Competition #2]</div>
+                <div class="section-item-meta">
+                  [Organization] · [Level] · [Year]
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">[Scholarship / Honor / Distinction]</div>
+                <div class="section-item-meta">
+                  [Organization] · [Year]
+                </div>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ACTIVITIES & LEADERSHIP -->
+        <article class="card" id="activities">
+          <div class="card-header">
+            <div class="card-title">Activities</div>
+            <div class="card-meta">Leadership & Service</div>
+          </div>
+          <div class="card-body">
+            <ul class="section-list">
+              <li>
+                <div class="section-item-title">[Role / Club #1]</div>
+                <div class="section-item-meta">
+                  [Position, e.g., President / Member] · [Years active]
+                </div>
+                <p>[Brief description of contributions, initiatives, or impact.]</p>
+              </li>
+              <li>
+                <div class="section-item-title">[Role / Club #2]</div>
+                <div class="section-item-meta">
+                  [Position] · [Years active]
+                </div>
+                <p>[Optional description.]</p>
+              </li>
+              <li>
+                <div class="section-item-title">[Volunteer / Community Service]</div>
+                <div class="section-item-meta">
+                  [Organization] · [Years / Hours, if relevant]
+                </div>
+                <p>[Brief description of service and what the student gained from it.]</p>
+              </li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- CONTACT -->
+        <article class="card" id="contact">
+          <div class="card-header">
+            <div class="card-title">Contact</div>
+            <div class="card-meta">Reach Out</div>
+          </div>
+          <div class="card-body">
+            <p>
+              [Short sentence inviting teachers, mentors, or admissions officers to get in touch.]
+            </p>
+            <ul class="section-list">
+              <li>
+                <div class="section-item-title">Email</div>
+                <div class="section-item-meta">
+                  <a href="mailto:[EMAIL_ADDRESS]">[EMAIL_ADDRESS]</a>
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">GitHub</div>
+                <div class="section-item-meta">
+                  <a href="https://github.com/[GITHUB_USERNAME]" target="_blank" rel="noopener">
+                    github.com/[GITHUB_USERNAME]
+                  </a>
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">LinkedIn</div>
+                <div class="section-item-meta">
+                  <a href="https://www.linkedin.com/in/[LINKEDIN_HANDLE]" target="_blank" rel="noopener">
+                    linkedin.com/in/[LINKEDIN_HANDLE]
+                  </a>
+                </div>
+              </li>
+              <!-- Add any other relevant links (portfolio, blog, etc.) -->
+            </ul>
+          </div>
+        </article>
+      </aside>
+    </main>
+
+    <footer>
+      <div>
+        © [YEAR] [STUDENT NAME]. All rights reserved.
+      </div>
+      <div>
+        Template adapted for academic portfolios. Licensed under MIT.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
