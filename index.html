@@ -2,36 +2,36 @@
 <html lang="en">
 <head>
   <!-- =========================================
-       STUDENT PORTFOLIO TEMPLATE
-       Replace all PLACEHOLDER values
+       STUDENT PORTFOLIO TEMPLATE SAMPLE
+       This is a filled-out example for reference
        ========================================= -->
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Basic SEO -->
-  <title>[STUDENT NAME] – Academic Portfolio</title>
-  <meta name="description" content="Academic portfolio for [STUDENT NAME], a [GRADE LEVEL] student showcasing coursework, projects, events, and leadership." />
+  <title>Nityasri Bhaskar – Academic Portfolio</title>
+  <meta name="description" content="Academic portfolio for Nityasri Bhaskar, a 10th-grade student showcasing coursework, projects, events, and leadership." />
 
   <!-- Open Graph / Social (optional, but good practice) -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="[STUDENT NAME] – Academic Portfolio" />
-  <meta property="og:description" content="Academic portfolio for [STUDENT NAME], a [GRADE LEVEL] student showcasing coursework, projects, events, and leadership." />
-  <meta property="og:image" content="[URL TO SOCIAL PREVIEW IMAGE]" />
-  <meta property="og:url" content="https://[GITHUB_USERNAME].github.io/[REPO_NAME]/" />
+  <meta property="og:title" content="Nityasri Bhaskar – Academic Portfolio" />
+  <meta property="og:description" content="Academic portfolio for Nityasri Bhaskar, a 10th-grade student showcasing coursework, projects, events, and leadership." />
+  <meta property="og:image" content="https://bhaskar2507.github.io/bhaskartesting.github.io/images/preview.jpg" />
+  <meta property="og:url" content="https://bhaskar2507.github.io/bhaskartesting.github.io/" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="[STUDENT NAME] – Academic Portfolio" />
-  <meta name="twitter:description" content="Academic portfolio for [STUDENT NAME], a [GRADE LEVEL] student showcasing coursework, projects, events, and leadership." />
-  <meta name="twitter:image" content="[URL TO SOCIAL PREVIEW IMAGE]" />
-  <meta name="twitter:url" content="https://[GITHUB_USERNAME].github.io/[REPO_NAME]/" />
+  <meta name="twitter:title" content="Nityasri Bhaskar – Academic Portfolio" />
+  <meta name="twitter:description" content="Academic portfolio for Nityasri Bhaskar, a 10th-grade student showcasing coursework, projects, events, and leadership." />
+  <meta name="twitter:image" content="https://bhaskar2507.github.io/bhaskartesting.github.io/images/preview.jpg" />
+  <meta name="twitter:url" content="https://bhaskar2507.github.io/bhaskartesting.github.io/" />
 
   <!-- Author / License -->
-  <meta name="author" content="[INSTRUCTOR / MENTOR NAME], [ORGANIZATION / PROGRAM]" />
+  <meta name="author" content="Nityasri Bhaskar (student); template by Prof. Vinay Kanth Rao Kodipelly" />
   <meta name="license" content="MIT License" />
 
   <!-- Canonical URL -->
-  <link rel="canonical" href="https://[GITHUB_USERNAME].github.io/[REPO_NAME]/" />
+  <link rel="canonical" href="https://bhaskar2507.github.io/bhaskartesting.github.io/" />
 
   <!-- Fonts (example brand kit – optional, can change) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -44,17 +44,17 @@
   <!-- Basic Styling (inline for simplicity; you can move to styles.css) -->
   <style>
     :root {
-      --bg: #0f172a;
-      --bg-alt: #020617;
-      --card: #020617;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text-main: #e5e7eb;
-      --text-muted: #9ca3af;
-      --border-subtle: rgba(148, 163, 184, 0.3);
-      --radius-lg: 16px;
-      --radius-xl: 24px;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.85);
+      --bg: #ffffff;
+      --bg-alt: #f5f5f5;
+      --card: #ffffff;
+      --accent: #404040;
+      --accent-soft: rgba(64, 64, 64, 0.1);
+      --text-main: #111;
+      --text-muted: #555;
+      --border-subtle: #e0e0e0;
+      --radius-lg: 4px;
+      --radius-xl: 6px;
+      --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.05);
     }
 
     * {
@@ -65,8 +65,8 @@
 
     body {
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1e293b 0, #020617 52%, #000 100%);
-      color: var(--text-main);
+      background: white;
+      color: black;
       line-height: 1.6;
       min-height: 100vh;
     }
@@ -94,6 +94,27 @@
       margin-bottom: 32px;
     }
 
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
     .brand {
       display: flex;
       flex-direction: column;
@@ -101,9 +122,9 @@
     }
 
     .brand-title {
-      font-family: "Poppins", system-ui, sans-serif;
+      font-family: "Inter", system-ui, sans-serif;
       font-size: 1.75rem;
-      font-weight: 800;
+      font-weight: 700;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
@@ -124,14 +145,11 @@
 
     main {
       display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-      gap: 24px;
+      grid-template-columns: 1fr;
+      gap: 48px;
     }
 
     @media (max-width: 800px) {
-      main {
-        grid-template-columns: 1fr;
-      }
       header {
         flex-direction: column;
         align-items: flex-start;
@@ -140,10 +158,14 @@
         text-align: left;
         max-width: 100%;
       }
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
 
     .card {
-      background: linear-gradient(145deg, var(--card), #020617 40%, #020617 100%);
+      background: var(--card);
       border-radius: var(--radius-xl);
       border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-soft);
@@ -153,7 +175,7 @@
     }
 
     .card + .card {
-      margin-top: 16px;
+      margin-top: 48px;
     }
 
     .card-header {
@@ -200,8 +222,9 @@
     .name {
       font-family: "Poppins", system-ui, sans-serif;
       font-size: 1.9rem;
-      font-weight: 800;
+      font-weight: 600;
       margin-bottom: 4px;
+      color: var(--text-main);
     }
 
     .subtitle {
@@ -276,14 +299,22 @@
 <body>
   <div class="page">
     <header>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#coursework">Coursework</a></li>
+          <li><a href="#achievements">Achievements</a></li>
+          <li><a href="#activities">Activities</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
       <div class="brand">
-        <!-- STUDENT: Replace with your name / brand -->
-        <div class="brand-title">[STUDENT NAME]</div>
+        <div class="brand-title">Nityasri&nbsp;&nbsp;Bhaskar</div>
         <div class="brand-subtitle">Academic Portfolio</div>
       </div>
       <div class="tagline">
-        <!-- STUDENT: One-sentence summary -->
-        [Short 1–2 sentence description of who you are, your grade, and your main academic interests.]
+        10th-grade student passionate about mathematics, medicine, and STEM leadership.
       </div>
     </header>
 
@@ -300,30 +331,28 @@
             <div class="pill">Student Profile</div>
             <h1 class="name">Nityasri Bhaskar</h1>
             <p class="subtitle">
-              [GRADE LEVEL] student at [SCHOOL NAME], with interests in [KEY SUBJECTS / FOCUS AREAS].
+              10th Grade Student at Parkway Central High School | Aspiring Mathematician & Medical Professional | STEM Leader
             </p>
             <p>
-              [A short paragraph (3–5 sentences) describing the student’s academic interests, learning philosophy,
-              and goals. Mention any programs, mentors, or institutions (e.g., coached by the Active Learning Institute
-              (ActiveSTEM.org)).]
+              I am a dedicated 10th-grade student at Parkway Central High School with a strong passion for mathematics and medicine. I actively engage in STEM leadership roles and community service, aiming to make a positive impact through my academic pursuits and extracurricular activities. Coached by the Active Learning Institute (ActiveSTEM.org), I have conducted many projects and learning tools to guide other students in their learning journey. My goal is to leverage my skills and knowledge to contribute meaningfully to the field of healthcare.
             </p>
 
             <div class="meta-list" style="margin-top: 16px;">
               <div>
                 <div class="meta-label">Grade</div>
-                <div class="meta-value">[GRADE LEVEL]</div>
+                <div class="meta-value">10</div>
               </div>
               <div>
                 <div class="meta-label">School</div>
-                <div class="meta-value">[SCHOOL NAME]</div>
+                <div class="meta-value">Parkway Central High School</div>
               </div>
               <div>
                 <div class="meta-label">Location</div>
-                <div class="meta-value">[CITY, STATE / COUNTRY]</div>
+                <div class="meta-value">Chesterfield, MO</div>
               </div>
               <div>
                 <div class="meta-label">Focus</div>
-                <div class="meta-value">[e.g., Mathematics, Computer Science, STEM Leadership]</div>
+                <div class="meta-value">Mathematics, Medicine, STEM Leadership</div>
               </div>
             </div>
           </div>
@@ -339,51 +368,38 @@
             <ul class="section-list">
               <!-- PROJECT 1 -->
               <li>
-                <div class="section-item-title">[Project Title #1]</div>
+                <div class="section-item-title">ACT Marathon</div>
                 <div class="section-item-meta">
-                  [Subject / Area] · [Year or Term] · [Individual / Team]
+                  Math · 2025 October · Pair
                 </div>
                 <p>
-                  [2–3 sentence description of what the project is about, the problem it addressed, and what the student
-                  learned or achieved.]
+                 With another student, I conducted a fun, entertaining marathon to help students prepare for the math portion of the ACT exam. The event included time management, strategy sessions, and peer support, resulting in increased confidence among participants.
                 </p>
+                <div class="project-images" style="display: flex; gap: 10px; margin-top: 10px;">
+                  <img src="images/act1.jpg" alt="ACT Marathon Image 1" style="max-width: 600px; height: auto;">
+                  <img src="images/act2.jpg" alt="ACT Marathon Image 2" style="max-width: 600px; height: auto;">
+                </div>
                 <div class="badge-row">
-                  <span class="badge">[Skill/Tool]</span>
-                  <span class="badge">[Language/Tech]</span>
-                  <span class="badge">[Topic/Domain]</span>
+                  <span class="badge">Leadership</span>
+                  <span class="badge">Math Strategy</span>
+                  <span class="badge">Organization</span>
                 </div>
               </li>
 
               <!-- PROJECT 2 -->
               <li>
-                <div class="section-item-title">[Project Title #2]</div>
+                <div class="section-item-title">Future STEM Project</div>
                 <div class="section-item-meta">
-                  [Subject / Area] · [Year or Term] · [Individual / Team]
+                  Upcoming · Planned
                 </div>
                 <p>
-                  [Brief description of a second significant project, research, or competition entry.]
+                  Space reserved for upcoming science fairs, coding projects, or medical research presentations.
                 </p>
                 <div class="badge-row">
-                  <span class="badge">[Skill/Tool]</span>
-                  <span class="badge">[Language/Tech]</span>
+                  <span class="badge">Research</span>
+                  <span class="badge">Presentation</span>
                 </div>
               </li>
-
-              <!-- PROJECT 3 -->
-              <li>
-                <div class="section-item-title">[Project Title #3]</div>
-                <div class="section-item-meta">
-                  [Subject / Area] · [Year or Term] · [Individual / Team]
-                </div>
-                <p>
-                  [Optional third project. Focus on impact, creativity, or difficulty.]
-                </p>
-                <div class="badge-row">
-                  <span class="badge">[Skill/Tool]</span>
-                  <span class="badge">[Topic/Domain]</span>
-                </div>
-              </li>
-            </ul>
           </div>
         </article>
 
@@ -395,29 +411,75 @@
           </div>
           <div class="card-body">
             <p>
-              [Brief overview of the student’s academic track—for example, honors courses, AP classes, or specialized
-              programs.]
+              Throughout my academic journey, I have completed a range of challenging courses that have deepened my knowledge and skills in various subjects:
             </p>
             <ul class="section-list">
               <li>
-                <div class="section-item-title">[Course Name #1]</div>
+                <div class="section-item-title">Honors Geometry</div>
                 <div class="section-item-meta">
-                  [Level, e.g., Honors / AP / IB] · [Year or term]
+                  Honors · 2024-2025
                 </div>
               </li>
               <li>
-                <div class="section-item-title">[Course Name #2]</div>
+                <div class="section-item-title">Honors Algebra 2/Trigonometry</div>
                 <div class="section-item-meta">
-                  [Level] · [Year or term]
+                  Honors · 2025-2026
                 </div>
               </li>
               <li>
-                <div class="section-item-title">[Course Name #3]</div>
+                <div class="section-item-title">Honors Biology</div>
                 <div class="section-item-meta">
-                  [Level] · [Year or term]
+                  Honors · 2024-2025
                 </div>
               </li>
-              <!-- Add more as needed -->
+              <li>
+                <div class="section-item-title">Honors Chemistry</div>
+                <div class="section-item-meta">
+                  Honors · 2025-2026
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">Introduction to Computer Technology</div>
+                <div class="section-item-meta">
+                  2024-2025
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">Honors Introduction to Engineering Design</div>
+                <div class="section-item-meta">
+                  Honors · 2025-2026
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">AP Human Geography</div>
+                <div class="section-item-meta">
+                  AP · 2024-2025
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">AP World History</div>
+                <div class="section-item-meta">
+                  AP · 2025-2026
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">Honors English 2</div>
+                <div class="section-item-meta">
+                  Honors · 2025-2026
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">Biotechnology</div>
+                <div class="section-item-meta">
+                  2025-2026
+                </div>
+              </li>
+              <li>
+                <div class="section-item-title">Spanish 3</div>
+                <div class="section-item-meta">
+                  2025-2026
+                </div>
+              </li>
             </ul>
           </div>
         </article>
@@ -434,21 +496,15 @@
           <div class="card-body">
             <ul class="section-list">
               <li>
-                <div class="section-item-title">[Award / Competition #1]</div>
+                <div class="section-item-title">Math Bowl Student Leader</div>
                 <div class="section-item-meta">
-                  [Organization] · [Level, e.g., School / Regional / National] · [Year]
+                  School · Leadership · 2025
                 </div>
               </li>
               <li>
-                <div class="section-item-title">[Award / Competition #2]</div>
+                <div class="section-item-title">Active Contributor in Class</div>
                 <div class="section-item-meta">
-                  [Organization] · [Level] · [Year]
-                </div>
-              </li>
-              <li>
-                <div class="section-item-title">[Scholarship / Honor / Distinction]</div>
-                <div class="section-item-meta">
-                  [Organization] · [Year]
+                  MICDS · Participation · Ongoing
                 </div>
               </li>
             </ul>
@@ -464,25 +520,18 @@
           <div class="card-body">
             <ul class="section-list">
               <li>
-                <div class="section-item-title">[Role / Club #1]</div>
+                <div class="section-item-title">Math Bowl Student Leader</div>
                 <div class="section-item-meta">
-                  [Position, e.g., President / Member] · [Years active]
+                  School · 2025
                 </div>
-                <p>[Brief description of contributions, initiatives, or impact.]</p>
+                <p>Led a team of middle schoolers in a math competition, ensuring everyone participated and contributed to solving problems efficiently.</p>
               </li>
               <li>
-                <div class="section-item-title">[Role / Club #2]</div>
+                <div class="section-item-title">Student Contributor</div>
                 <div class="section-item-meta">
-                  [Position] · [Years active]
+                  MICDS · Ongoing
                 </div>
-                <p>[Optional description.]</p>
-              </li>
-              <li>
-                <div class="section-item-title">[Volunteer / Community Service]</div>
-                <div class="section-item-meta">
-                  [Organization] · [Years / Hours, if relevant]
-                </div>
-                <p>[Brief description of service and what the student gained from it.]</p>
+                <p>Active participant in class discussions and collaborative projects, bringing creative solutions to group tasks.</p>
               </li>
             </ul>
           </div>
@@ -496,7 +545,7 @@
           </div>
           <div class="card-body">
             <p>
-              [Short sentence inviting teachers, mentors, or admissions officers to get in touch.]
+              Feel free to reach out for collaborations, mentorship, or admissions inquiries.
             </p>
             <ul class="section-list">
               <li>
@@ -508,20 +557,11 @@
               <li>
                 <div class="section-item-title">GitHub</div>
                 <div class="section-item-meta">
-                  <a href="https://github.com/[GITHUB_USERNAME]" target="_blank" rel="noopener">
-                    github.com/[GITHUB_USERNAME]
+                  <a href="[GITHUB_LINK]" target="_blank" rel="noopener">
+                    [GITHUB_LINK]
                   </a>
                 </div>
               </li>
-              <li>
-                <div class="section-item-title">LinkedIn</div>
-                <div class="section-item-meta">
-                  <a href="https://www.linkedin.com/in/[LINKEDIN_HANDLE]" target="_blank" rel="noopener">
-                    linkedin.com/in/[LINKEDIN_HANDLE]
-                  </a>
-                </div>
-              </li>
-              <!-- Add any other relevant links (portfolio, blog, etc.) -->
             </ul>
           </div>
         </article>
@@ -530,12 +570,15 @@
 
     <footer>
       <div>
-        © [YEAR] [STUDENT NAME]. All rights reserved.
+        © <span id="year"></span> Nityasri Bhaskar. All rights reserved.
       </div>
       <div>
         Template adapted for academic portfolios. Licensed under MIT.
       </div>
     </footer>
+    <script>
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </div>
 </body>
 </html>
