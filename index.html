@@ -115,6 +115,14 @@
       text-decoration: underline;
     }
 
+    #nav-links {
+      display: block;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
     .brand {
       display: flex;
       flex-direction: column;
@@ -161,6 +169,12 @@
       nav ul {
         flex-direction: column;
         gap: 10px;
+      }
+      #nav-links {
+        display: none;
+      }
+      #menu-toggle {
+        display: block;
       }
       .project-images {
         flex-direction: column;
@@ -584,6 +598,16 @@
     </footer>
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Hamburger menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+
+      menuToggle.addEventListener('click', () => {
+        const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
+        menuToggle.setAttribute('aria-expanded', !isExpanded);
+        navLinks.style.display = isExpanded ? 'none' : 'block';
+      });
     </script>
   </div>
 </body>
